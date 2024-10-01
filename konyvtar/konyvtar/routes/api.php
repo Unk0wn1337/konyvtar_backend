@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CopyController;
+use App\Http\Controllers\LendingController;
 use App\Http\Controllers\LibUserController;
+use App\Http\Controllers\UserController;
 use App\Models\Copy;
 use Database\Factories\BookFactory;
 use Illuminate\Http\Request;
@@ -14,11 +16,11 @@ Route::get('/user', function (Request $request) {
 
 
 // GET
-Route::get('/users', [LibUserController::class, 'index']);
+Route::get('/users', [UserController::class, 'index']);
 // paraméteres utvobal és $ ne tegyünk, kebabCase a preferált
-Route::get('/user/{id}', [LibUserController::class, 'show']);
+Route::get('/user/{id}', [UserController::class, 'show']);
 // POST
-Route::post('/user', [LibUserController::class, 'store']);
+Route::post('/user', [UserController::class, 'store']);
 
 Route::get('/books', [BookFactory::class, 'index']);
 // paraméteres utvobal és $ ne tegyünk, kebabCase a preferált
@@ -38,3 +40,11 @@ Route::get('/copy', [CopyController::class, 'index']);
 Route::get('/copy/{id}', [CopyController::class, 'show']);
 // POST
 Route::post('/copy', [CopyController::class, 'store']);
+
+
+//lending
+Route::get('/lendings', [LendingController::class, 'index']);
+Route::get('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'show']);
+Route::post('/lending', [LendingController::class, 'store']);
+Route::put('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'update']);
+Route::delete('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'destroy']);

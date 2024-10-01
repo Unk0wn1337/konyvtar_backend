@@ -1,0 +1,111 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "konyvtar",
+    "collectionId": "d7a9361c-1245-4bda-9cfb-c176ff88fd35",
+    "dateExported": "2024-10-01T14:06:21.008Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "a82f63b4-f4eb-48ed-b85c-570d19736be7",
+            "colId": "d7a9361c-1245-4bda-9cfb-c176ff88fd35",
+            "containerId": "",
+            "name": "getUser",
+            "url": "",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-09-24T12:14:44.008Z",
+            "modified": "2024-09-24T14:18:17.855Z",
+            "headers": []
+        },
+        {
+            "_id": "397e2b00-79f3-4d52-aa65-718a9185ddbf",
+            "colId": "d7a9361c-1245-4bda-9cfb-c176ff88fd35",
+            "containerId": "",
+            "name": "getUser Copy",
+            "url": "copy/6",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-09-24T12:16:21.831Z",
+            "modified": "2024-09-24T14:20:21.998Z",
+            "headers": []
+        },
+        {
+            "_id": "e8c7a16b-e9e7-4422-91e4-4623a4ff6248",
+            "colId": "d7a9361c-1245-4bda-9cfb-c176ff88fd35",
+            "containerId": "",
+            "name": "getLendings",
+            "url": "lendings",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-10-01T13:58:40.589Z",
+            "modified": "2024-10-01T13:59:41.513Z",
+            "headers": []
+        },
+        {
+            "_id": "fae61fd6-9c15-45c2-8b64-fd19daebe527",
+            "colId": "d7a9361c-1245-4bda-9cfb-c176ff88fd35",
+            "containerId": "",
+            "name": "postUser",
+            "url": "user/1",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-09-24T12:26:06.132Z",
+            "modified": "2024-09-24T14:12:06.030Z",
+            "headers": []
+        },
+        {
+            "_id": "8b66bb2b-143c-49fe-b93f-2db038dfb3e6",
+            "colId": "d7a9361c-1245-4bda-9cfb-c176ff88fd35",
+            "containerId": "",
+            "name": "getLending",
+            "url": "lendings/1/7/1978-09-02",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-10-01T13:59:59.449Z",
+            "modified": "2024-10-01T14:01:11.201Z",
+            "headers": []
+        },
+        {
+            "_id": "62ae79da-6f46-4854-8e75-344c5d47072b",
+            "colId": "d7a9361c-1245-4bda-9cfb-c176ff88fd35",
+            "containerId": "",
+            "name": "postLending",
+            "url": "lendings",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-10-01T14:01:46.069Z",
+            "modified": "2024-10-01T14:04:29.408Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"user_id\":1,\n\"copy_id\":7,\n\"start\":\"1978-09-02\"}",
+                "form": []
+            }
+        },
+        {
+            "_id": "baa8c39a-07d4-4ae2-8694-6024f5800449",
+            "colId": "d7a9361c-1245-4bda-9cfb-c176ff88fd35",
+            "containerId": "",
+            "name": "deleteLending ",
+            "url": "lendings/1/7/1978-09-02",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-10-01T14:04:32.603Z",
+            "modified": "2024-10-01T14:05:41.945Z",
+            "headers": []
+        }
+    ],
+    "settings": {
+        "headers": [
+            {
+                "name": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "options": {
+            "baseUrl": "http://localhost:8000/api/"
+        }
+    },
+    "ref": "gPRs_Xdx4VOUm8pTLxpUUz_5f5l0vy1aT4MQM1L9rWR5Mrt2ZIqb6DJDsKObUKggwfDpflLMNA1xb0z4fLdxIA"
+}
