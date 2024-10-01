@@ -13,10 +13,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->id();
+            $table->id('book_id');
             $table->string('author');
             $table->string('title');
-            $table->integer('pieces');
             $table->timestamps();
         });
 

@@ -7,9 +7,6 @@ use Illuminate\Http\Request;
 
 class CopyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return Copy::all();
@@ -38,7 +35,9 @@ class CopyController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $record = Copy::find($id);
+        $record->fill($request->all());
+        $record->save();
     }
 
     /**
@@ -46,6 +45,8 @@ class CopyController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Copy::find($id) -> delete();
     }
 }
+
+

@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LibUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class LibUserController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return LibUser::all();
+        return User::all();
     }
 
     /**
@@ -20,7 +20,7 @@ class LibUserController extends Controller
      */
     public function store(Request $request)
     {
-        $record = new LibUser();
+        $record = new User();
         $record->fill($request->all());
         $record->save();
     }
@@ -30,7 +30,7 @@ class LibUserController extends Controller
      */
     public function show(string $id)
     {
-        return LibUser::find($id);
+        return User::find($id);
     }
 
     /**
@@ -38,7 +38,9 @@ class LibUserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $record = User::find($id);
+        $record->fill($request->all());
+        $record->save();
     }
 
     /**
@@ -46,6 +48,6 @@ class LibUserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        User::find($id) -> delete();
     }
 }

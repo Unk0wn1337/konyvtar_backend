@@ -9,9 +9,11 @@ class Book extends Model
 {
     use HasFactory;
 
+    //elsődleges kulcs másik neve
+    protected $primaryKey = 'book_id';
+
     protected $fillable = [
         'author',
-        'title',
-        'pieces'
+        'title'
     ];
 }

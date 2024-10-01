@@ -38,7 +38,9 @@ class BookController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $record = Book::find($id);
+        $record->fill($request->all());
+        $record->save();
     }
 
     /**
@@ -46,6 +48,6 @@ class BookController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Book::find($id) -> delete();
     }
 }
