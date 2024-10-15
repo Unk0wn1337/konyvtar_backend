@@ -47,4 +47,5 @@ Route::get('/lendings', [LendingController::class, 'index']);
 Route::get('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'show']);
 Route::post('/lending', [LendingController::class, 'store']);
 Route::put('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'update']);
+Route::patch('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'update']);
 Route::delete('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'destroy']);

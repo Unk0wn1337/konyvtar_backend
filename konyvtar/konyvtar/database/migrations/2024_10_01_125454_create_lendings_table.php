@@ -20,6 +20,9 @@ return new class extends Migration
             $table -> foreignId('user_id')->references('id')->on('users');
             $table -> foreignId('copy_id')->references('copy_id')->on('copies');
             $table -> date('start')->default(now());
+            $table -> date('end')->nullable();
+            //0: nincs f, 1: első felőszálítás
+            $table -> smallInteger('warning')->default(0);
             $table->timestamps();
 
             

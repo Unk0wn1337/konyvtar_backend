@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        User::factory(20)->create();
+        User::factory(69)->create();
         Book::factory(69)->create();
         Copy::factory(20)->create();
-        Lending::factory(30)->create();
+        Lending::factory(20)->create();
         
 
         // User::factory()->create([
