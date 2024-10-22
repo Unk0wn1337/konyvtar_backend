@@ -8,21 +8,24 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // bárki által elérhető
-Route::post('/register',[RegisteredUserController::class, 'store']);
-Route::post('/login',[AuthenticatedSessionController::class, 'store']);
+Route::post('/register', [RegisteredUserController::class, 'store']);
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 
 //autentikált útvonal
 Route::middleware(['auth:sanctum'])
-->group(function () {
-    Route::get('/user', function (Request $request) {
-        return $request->user();
+    ->group(function () {
+        Route::get('/user', function (Request $request) {
+            return $request->user();
+        });
+        // Kijelentkezés útvonal
+        Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
     });
-    // Kijelentkezés útvonal
-    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
-});
 
-Route::middleware(['auth:sanctum',Admin::class])
-->group(function () {
+    //összes kérés
+    Route::apiResource('/users', UserController::class);
+    Route::patch('update-password/{id}', [UserController::class, "updatePassword"]);
+
+    Route::middleware(['auth:sanctum', Admin::class])
+    ->group(function () {
+    });
     Route::get('/admin/users', [UserController::class, 'index']);
-});
-
