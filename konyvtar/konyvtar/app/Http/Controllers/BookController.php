@@ -50,4 +50,12 @@ class BookController extends Controller
     {
         Book::find($id) -> delete();
     }
+
+    public function booksWithCopies(){
+       // $user = Auth::user();	//bejelentkezett felhasználó
+        return Book::with('copies')
+       // ->where('user_id','=',$user->id)
+        ->get();
+       
+    }
 }

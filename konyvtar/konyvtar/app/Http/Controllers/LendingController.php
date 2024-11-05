@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Lending;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LendingController extends Controller
 {
+
+    //alap függvények
     public function index()
     {
         return Lending::all();
@@ -51,5 +54,21 @@ class LendingController extends Controller
     {
         $this->show($user_id,$copy_id,$start)->delete();
     }
+
+    //egyéb lekérdezések 
+    public function dateSpecific(){
+        return Lending::with('specificDate')
+        ->where('start','=','2011-04-13')
+        ->get();
+       
+    }
+    public function copySpecific($copy_id){
+        return Lending::with('copies')
+        ->where('copy_id','=',$copy_id)
+        ->get();
+       
+    }
+
+
 
 }
